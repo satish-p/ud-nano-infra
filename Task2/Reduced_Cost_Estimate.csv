@@ -1,0 +1,31 @@
+Group hierarchy,Region,Service,Upfront,Monthly,First 12 months total,Currency,Configuration summary
+My Estimate,US East (N. Virginia),Amazon EC2,0,287.36,3448.32,USD,"Operating system (Linux), Quantity (4), Storage for each EC2 instance (General Purpose SSD (gp2)), Storage amount (30 GB), Instance type (t3a.xlarge)"
+My Estimate,US East (N. Virginia),Amazon EC2,0,299.06,3588.72,USD,"Operating system (Linux), Quantity (8), Storage for each EC2 instance (General Purpose SSD (gp2)), Storage amount (30 GB), Instance type (t3a.large)"
+My Estimate,US East (N. Virginia),Amazon RDS for MySQL,0,2236.692,26840.30,USD,"Quantity (1), Storage for each RDS instance (General Purpose SSD (gp2)), Storage amount (2 TB), Instance type (db.m5.4xlarge), Additional backup storage (5 TB)"
+My Estimate,US East (N. Virginia),Amazon Virtual Private Cloud (VPC),0,965.7,11588.40,USD,Number of NAT Gateways (2)
+My Estimate,US East (N. Virginia),Amazon Route 53,0,1.5,18.00,USD,Hosted Zones (1)
+My Estimate,US East (N. Virginia),S3 Standard,0,1150,13800.00,USD,S3 Standard storage (50000 GB per month)
+My Estimate,US East (N. Virginia),Data Transfer,0,0,0.00,USD," Inbound (from: Not selected) 0 TB per month 
+ Outbound (to: Not selected) 0 TB per month 
+"
+My Estimate,US East (N. Virginia),AWS Data Transfer,0,0,0.00,USD," Inbound (from: Internet) 10 TB per month 
+ Outbound (to: Amazon Cloud Front) 20 TB per month 
+ Intra-Region 0 TB per month 
+"
+My Estimate,US East (N. Virginia),Amazon Virtual Private Cloud (VPC),0,921.51,11058.12,USD," Inbound (from: Internet) 20 TB per month 
+ Outbound (to: Internet) 10 TB per month 
+ Intra-Region 0 TB per month 
+"
+My Estimate,US East (N. Virginia),Elastic Load Balancing,0,441.65000000000003,5299.80,USD,Number of Application Load Balancers (2)
+
+
+
+"AWS Pricing Calculator provides only an estimate of your AWS fees and doesn't include any taxes that might apply. Your actual fees depend on a variety of factors, including your actual usage of AWS services."
+
+
+Changes made to reduce cost:
+============================
+using smaller ec2 instance size - t3a.large instead of t3a.xlarge. Instances will be in auto scaling group and based on load from 50000 users no of instances will be scaled down/up, but it is expected to  average out because of nature of social media traffic. For one region, It will peak during few hours but I expect user traffic to be lower for a good part of the day. 
+
+using smaller RDS instance:  For most part of the day services will work but there is a risk of increase in latency during peak load hours.
+
