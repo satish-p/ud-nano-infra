@@ -14,8 +14,10 @@ provider "aws" {
  	count	= "4"
  	instance_type	= "t2.micro"
  	subnet_id = "subnet-0a69f099d51087a7c"
-
- }
+	tags = {
+	  Name= "Udacity T2"
+	}
+}
 
 # provision 2 m4.large EC2 instances named Udacity M4
 
@@ -24,5 +26,7 @@ provider "aws" {
  	count	= "2"
  	instance_type	= "m4.large"
  	subnet_id = "subnet-0a69f099d51087a7c"
-
+	tags = {
+	  Name = "Udacity M4"
  }
+}
